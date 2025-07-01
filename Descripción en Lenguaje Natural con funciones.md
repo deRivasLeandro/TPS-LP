@@ -57,11 +57,11 @@ FINFUNCION
 ```bnf
 <programa> ::= "INICIO" <bloque> "FIN"
 
-<bloque> ::= <sentencias> <definiciones_funcion>
+<bloque> ::= <definiciones_funcion> <sentencias>
 
 definiciones_funcion ::= <definicion_funcion> <definiciones_funcion> | λ
 
-definicion_funcion ::= "FUNCION" <nombre> "(" <parametros>? ")" <sentencias> "FINFUNCION"
+definicion_funcion ::= "FUNCION" <nombre> "(" <parametros>* ")" <sentencias> "FINFUNCION"
 
 <parametros> ::= <parametro> ("," <parametro>)*
 
@@ -92,7 +92,7 @@ definicion_funcion ::= "FUNCION" <nombre> "(" <parametros>? ")" <sentencias> "FI
 
 <operador> ::= "+" | "-" | "*" | "/"
 
-<llamado_funcion> ::= <nombre> "(" <argumentos>? ")"
+<llamado_funcion> ::= <nombre> "(" <argumentos>* ")"
 
 <argumentos> ::= <valor> ("," <valor>)*
 
@@ -149,6 +149,7 @@ Los caracteres se interpretan como su código ASCII.
 
 ## 🎯 Semántica de Funciones
 
+- Más que funciones son procedimientos, puesto que no tienen un return.
 - Las funciones se definen con `FUNCION <nombre>(<parametros>)` y terminan con `FINFUNCION`.
 - No devuelven valores (procedimientos), pero pueden usar `IMPRIMIR`.
 - Los parámetros son **ligados posicionalmente**, y son **variables locales**.
@@ -174,7 +175,7 @@ Los caracteres se interpretan como su código ASCII.
 | Condicional                         | Sí (`SI <condición> ENTONCES ... SINO ... FINSI`)                   |
 | Tipado                              | Estático (en tiempo de declaración)                                 |
 | Sistema de Tipos                    | Fuerte                                                              |
-| Conversión de Tipos                 | Implícita para CAR ↔ NUM (ASCII)                                     |
+| Conversión de Tipos                 | Implícita para CAR -> NUM (ASCII)                                     |
 | Sobrecarga de operadores            | Parcial: `+`, `-`, `*`, `/` sobre NUM y CAR;<br>`+`, `*` sobre ARR    |
 | Nivel de abstracción                | Medio                                                               |
 | Independencia de la máquina         | Sí                                                                  |
@@ -203,7 +204,7 @@ Los caracteres se interpretan como su código ASCII.
 | Manejo de errores / excepciones     | No                                                                  |
 | Eventos                             | No                                                                  |
 | Forma de comentario                 | No definida (convención: `//`, `#`)                                 |
-
+| Pasaje de parámetros                | Por referencia              |
 ---
 
 ## 🧪 Ejemplos de Programas
