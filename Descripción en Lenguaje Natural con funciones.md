@@ -204,7 +204,7 @@ Los caracteres se interpretan como su código ASCII.
 | Manejo de errores / excepciones     | No                                                                  |
 | Eventos                             | No                                                                  |
 | Forma de comentario                 | No definida (convención: `//`, `#`)                                 |
-| Pasaje de parámetros                | Por referencia              |
+| Pasaje de parámetros                | Por valor                   |
 ---
 
 ## 🧪 Ejemplos de Programas
