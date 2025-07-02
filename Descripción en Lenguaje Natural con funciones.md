@@ -3,7 +3,7 @@
 ---
 
 ### 📌 Descripción en Lenguaje Natural
-LDR es un lenguaje de programación de propósito general, simple y estructurado.
+LDR es un lenguaje de programación de propósito general, simple y de paradigma imperativo estructurado.
 
 - Las variables se escriben con letras mayúsculas (A–Z) seguidas opcionalmente de un número.  
   Ejemplos: `X`, `Z1`, `VAR99`.
@@ -106,7 +106,7 @@ definicion_funcion ::= "FUNCION" <nombre> "(" <parametros>* ")" <sentencias> "FI
 
 <caracter> ::= "'"[A-Za-z]"'"
 
-<variable> ::= [A-Z]+[0-9]?
+<variable> ::= [A-Z]+[0-9]*
 
 <nombre> ::= [A-Z]+
 ```
@@ -177,7 +177,7 @@ Los caracteres se interpretan como su código ASCII.
 | Sistema de Tipos                    | Fuerte                                                              |
 | Conversión de Tipos                 | Implícita para CAR -> NUM (ASCII)                                     |
 | Sobrecarga de operadores            | Parcial: `+`, `-`, `*`, `/` sobre NUM y CAR;<br>`+`, `*` sobre ARR    |
-| Nivel de abstracción                | Medio                                                               |
+| Nivel de abstracción                | Alto                                                                |
 | Independencia de la máquina         | Sí                                                                  |
 | Orientación a objetos               | No                                                                  |
 | Sensible a mayúsculas               | Sí (`X` y `x` son diferentes)                                       |
