@@ -24,6 +24,7 @@ LDR es un lenguaje de programación de propósito general, simple y de paradigma
 - **Asignación:**
   - `VAR = valor;`  
   - Ejemplo: `X = 10;`
+  - La reasignación funciona de la misma manera
 
 - **Condicional:**
 ```ldr
