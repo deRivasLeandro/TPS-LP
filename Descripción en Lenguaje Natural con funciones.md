@@ -45,12 +45,13 @@ FINMIENTRAS;
   - `IMPRIMIR VAR;`
 
 - **Funciones/Subprogramas:**
+  - Se pueden invocar con `NOMBRE(ARGUMENTOS);`
+
 ```ldr
 FUNCION NOMBRE(PARAMS)
   sentencias
 FINFUNCION
 ```
-  - Se pueden invocar con `NOMBRE(ARGUMENTOS);`
 
 ---
 
