@@ -87,7 +87,7 @@ FINFUNCION
 
 <condicional> ::= "SI" <condicion> "ENTONCES" <sentencias> "SINO" <sentencias> "FINSI"
 
-<condicion> ::= <valor> <operador_comparacion> <valor> | "(" <condicion> ")" | <condicion> "&&" <condicion> | <condicion> "||" <condicion> | "!" <condicion>
+<condicion> ::= <valor> <operador_comparacion> <valor> | "(" <condicion> ")" | <condicion> "&&" <condicion> | <condicion> "||" <condicion> | "!(" <condicion> ")"
 
 <operador_comparacion> ::= "<" | ">" | "==" | "<=" | ">=" | "!="
 

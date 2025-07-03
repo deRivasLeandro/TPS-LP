@@ -22,15 +22,14 @@ Diagrama sintáctico (Conway):
 
 ### Árbol Sintáctico:
 
-Programa
-│
-├── Instrucción: PUSH 2
-├── Instrucción: PUSH 3
-├── Instrucción: ADD
-│ ├── Operando1: POP (3)
-│ └── Operando2: POP (2)
-├── Instrucción: OUTPUT
-│ └── Operando: POP (5)
+- Programa  
+  - Instrucción: PUSH 2  
+  - Instrucción: PUSH 3  
+  - Instrucción: ADD  
+    - Operando1: POP (3)  
+    - Operando2: POP (2)  
+  - Instrucción: OUTPUT  
+    - Operando: POP (5)
 
 
 ---
@@ -55,23 +54,22 @@ Programa
 
 ### Árbol Sintáctico:
 
-Programa
-│
-├── Instrucción: PUSH 4
-├── Instrucción: PUSH 2
-├── Instrucción: MUL
-│ ├── Operando1: POP (2)
-│ └── Operando2: POP (4)
-│ └── Resultado: PUSH (8)
-├── Instrucción: PUSH 5
-├── Instrucción: PUSH 1
-├── Instrucción: SUB
-│ ├── Operando1: POP (1)
-│ └── Operando2: POP (5)
-│ └── Resultado: PUSH (4)
-├── Instrucción: ADD
-│ ├── Operando1: POP (4)
-│ └── Operando2: POP (8)
-│ └── Resultado: PUSH (12)
-├── Instrucción: OUTPUT
-│ └── Operando: POP (12)
+- Programa  
+  - Instrucción: PUSH 4  
+  - Instrucción: PUSH 2  
+  - Instrucción: MUL  
+    - Operando1: POP (2)  
+    - Operando2: POP (4)  
+    - Resultado: PUSH (8)  
+  - Instrucción: PUSH 5  
+  - Instrucción: PUSH 1  
+  - Instrucción: SUB  
+    - Operando1: POP (1)  
+    - Operando2: POP (5)  
+    - Resultado: PUSH (4)  
+  - Instrucción: ADD  
+    - Operando1: POP (4)  
+    - Operando2: POP (8)  
+    - Resultado: PUSH (12)  
+  - Instrucción: OUTPUT  
+    - Operando: POP (12)
