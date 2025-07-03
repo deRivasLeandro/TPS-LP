@@ -5,10 +5,11 @@
 ### 📌 Descripción en Lenguaje Natural
 LDR es un lenguaje de programación de propósito general, simple y de paradigma imperativo estructurado.
 
-- Las variables se escriben con letras mayúsculas (A–Z) seguidas opcionalmente de un número.  
+- Las variables se escriben con letras mayúsculas (A–Z) seguidas opcionalmente de uno o más números.  
   Ejemplos: `X`, `Z1`, `VAR99`.
-- Las sentencias se escriben en mayúscula y finalizan con punto y coma `;`.
+- Las sentencias, incluyendo bloques de control de flujo, se escriben en mayúscula y finalizan con punto y coma ;.
 - Un programa inicia con la palabra clave `INICIO` y finaliza con `FIN`.
+- La identación no es obligatoria, pero se recomienda para mejorar la claridad del programa.
 
 ### Tipos de datos
 - **Primitivos:** `NUM` (número entero), `CAR` (carácter).
@@ -59,9 +60,9 @@ FINFUNCION
 
 <bloque> ::= <definiciones_funcion> <sentencias>
 
-definiciones_funcion ::= <definicion_funcion> <definiciones_funcion> | λ
+<definiciones_funcion> ::= <definicion_funcion> <definiciones_funcion> | λ
 
-definicion_funcion ::= "FUNCION" <nombre> "(" <parametros>* ")" <sentencias> "FINFUNCION"
+<definicion_funcion> ::= "FUNCION" <nombre> "(" <parametros>* ")" <sentencias> "FINFUNCION"
 
 <parametros> ::= <parametro> ("," <parametro>)*
 
@@ -78,11 +79,17 @@ definicion_funcion ::= "FUNCION" <nombre> "(" <parametros>* ")" <sentencias> "FI
 
 <tipo> ::= "NUM" | "CAR" | "ARR"
 
+<declaracion> ::= <variable> <tipo> | <variable> <tipo> "=" <valor>
+
 <asignacion> ::= <variable> "=" <valor>
 
-<impresion> ::= "IMPRIMIR" <variable>
+<impresion> ::= "IMPRIMIR" (<variable> | <valor>)
 
 <condicional> ::= "SI" <condicion> "ENTONCES" <sentencias> "SINO" <sentencias> "FINSI"
+
+<condicion> ::= <valor> <operador_comparacion> <valor> | "(" <condicion> ")" | <condicion> "&&" <condicion> | <condicion> "||" <condicion> | "!" <condicion>
+
+<operador_comparacion> ::= "<" | ">" | "==" | "<=" | ">=" | "!="
 
 <iteracion> ::= "MIENTRAS" <condicion> "HACER" <sentencias> "FINMIENTRAS"
 
@@ -104,7 +111,8 @@ definicion_funcion ::= "FUNCION" <nombre> "(" <parametros>* ")" <sentencias> "FI
 
 <numero> ::= [0-9]+
 
-<caracter> ::= "'"[A-Za-z]"'"
+<caracter> ::= "'" <cualquier_caracter> "'"
+<cualquier_caracter> ::= [A-Za-z0-9!@#$%^&*()_+-=\[\]{}|;:'",.<>/?`~] | " "
 
 <variable> ::= [A-Z]+[0-9]*
 
@@ -180,7 +188,7 @@ Los caracteres se interpretan como su código ASCII.
 | Nivel de abstracción                | Alto                                                                |
 | Independencia de la máquina         | Sí                                                                  |
 | Orientación a objetos               | No                                                                  |
-| Sensible a mayúsculas               | Sí (`X` y `x` son diferentes)                                       |
+| Sensible a mayúsculas               | Sí (`X` y `x` son diferentes). No aplica para identificadores de variables (solo se permiten mayúsculas).         |
 | Control de flujo                    | Secuencia, selección, iteración, subprogramas                       |
 | Subprogramas                        | Sí (funciones definidas con parámetros)                             |
 | Funciones anidadas / Closures       | No                                                                  |
@@ -203,8 +211,7 @@ Los caracteres se interpretan como su código ASCII.
 | Constantes                          | Numéricas (`3`), caracteres (`'A'`)                                 |
 | Manejo de errores / excepciones     | No                                                                  |
 | Eventos                             | No                                                                  |
-| Forma de comentario                 | No definida (convención: `//`, `#`)                                 |
-| Pasaje de parámetros                | Por valor                   |
+| Forma de comentario                 | No definida (convención: `//`, `#` a implementar)                          |
 ---
 
 ## 🧪 Ejemplos de Programas
@@ -259,16 +266,16 @@ FIN
 ### Ejemplo 3: Uso de función SUMAR
 ```ldr
 INICIO
+  FUNCION SUMAR(X NUM, Y NUM)
+    RES NUM;
+    RES = X + Y;
+    IMPRIMIR RES;
+  FINFUNCION
+
   A NUM;
   B NUM;
   A = 5;
   B = 7;
   SUMAR(A, B);
 FIN
-
-FUNCION SUMAR(X NUM, Y NUM)
-  RES NUM;
-  RES = X + Y;
-  IMPRIMIR RES;
-FINFUNCION
 ```
