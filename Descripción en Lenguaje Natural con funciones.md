@@ -50,7 +50,7 @@ FUNCION NOMBRE(PARAMS)
   sentencias
 FINFUNCION
 ```
-- Se pueden invocar con `NOMBRE(ARGUMENTOS);`
+  - Se pueden invocar con `NOMBRE(ARGUMENTOS);`
 
 ---
 
