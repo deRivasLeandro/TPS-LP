@@ -280,3 +280,11 @@ INICIO
   SUMAR(A, B);
 FIN
 ```
+
+---
+
+- Posibles mejoras/extensiones para el lenguaje:
+  - Incorporar un tipo de dato booleano.
+  - Agregar manejo de errores.
+  - Permitir realizar comentarios en el código.
+  - Agregar funciones (que tengan un return).
