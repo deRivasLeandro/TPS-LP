@@ -111,7 +111,7 @@ FINFUNCION
 
 <item> ::= <numero> | <caracter>
 
-<numero> ::= [0-9]+
+<numero> ::= [0-9]+ 
 
 <caracter> ::= "'" <cualquier_caracter> "'"
 <cualquier_caracter> ::= [A-Za-z0-9!@#$%^&*()_+-=\[\]{}|;:'",.<>/?`~] | " "
@@ -289,3 +289,4 @@ FIN
   - Agregar manejo de errores.
   - Permitir realizar comentarios en el código.
   - Agregar funciones (que tengan un return).
+  - Ver de manejar los enteros cuando tienen 0s a la izquierda.
